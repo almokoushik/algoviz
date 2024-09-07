@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+
+:root {
+    --dark-text: #000;
+    --light-text: #fff;
+}
+
+.dark-mode {
+    --dark-text: #fff;
+    --light-text: #000;
+}
+
+header {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 10000;
+}
+
+header .site-logo {
+    display: inline-flex;
+    color: var(--dark-text);
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.header-controls {
+    display: flex;
+}
+
+.icon-group {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.icon-group ion-icon {
+    font-size: 1.5em;
+    color: var(--dark-text);
+}
+
+.icon-group.menu-toggle ion-icon {
+    font-size: 3em;
+    margin-top: -13px;
+}
+
+.icon-group ion-icon:nth-child(2) {
+    display: none;
+}
+
+.icon-group.active ion-icon:nth-child(2) {
+    display: block;
+}
+
+.icon-group.active ion-icon:nth-child(1) {
+    display: none;
+}
+
+.video-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-section video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    user-select: none;
+    mix-blend-mode: screen;
+}
+
+.dark-mode .overlay-mask {
+    filter: invert(1);
+    mix-blend-mode: multiply;
+}
+
+.text-overlay {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    overflow: hidden;
+}
+
+.text-overlay h4 {
+    font-size: 6.8rem;
+    color: cyan;
+    text-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+}
+
+.text-overlay h3 {
+    font-size: 8.5rem;
+    color: cyan;
+    text-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+}
+
+.side-nav {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--light-text);
+    z-index: 4;
+    transition: left 0.5s ease;
+}
+
+.side-nav.active {
+    left: 0;
+}
+
+.side-nav li {
+    list-style: none;
+}
+
+.side-nav li a {
+    display: inline-flex;
+    margin: 5px 0;
+    font-size: 2.25em;
+    text-decoration: none;
+    color: var(--dark-text);
+    padding: 5px 20px;
+    border-radius: 40px;
+}
+
+.side-nav li a:hover {
+    background: var(--dark-text);
+    color: var(--light-text);
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+}

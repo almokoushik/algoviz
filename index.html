@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Algorithm Visualizer</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+  </head>
+
+  <body>
+    <header>
+      <a href="#" class="site-logo"></a>
+      <div class="header-controls">
+        <div class="icon-group theme-toggle">
+          <ion-icon name="moon-outline"></ion-icon>
+          <ion-icon name="sunny-outline"></ion-icon>
+        </div>
+        <div class="icon-group menu-toggle">
+          <ion-icon name="menu-outline"></ion-icon>
+          <ion-icon name="close-outline"></ion-icon>
+        </div>
+      </div>
+    </header>
+    <section class="video-section">
+      <video src="1st part (1).mp4" autoplay loop muted type="mp4"></video>
+      <img src="mask (1).jpg" class="overlay-mask" />
+      <div class="text-overlay">
+        <marquee direction="right" behavior="alternate">
+          <h4>CSE 2100</h4>
+        </marquee>
+        <marquee direction="right" behavior="alternate">
+          <h4>Algorithm</h4>
+        </marquee>
+        <marquee direction="left" behavior="alternate">
+          <h3>Visualizer</h3>
+        </marquee>
+      </div>
+    </section>
+
+    <!-- Sidebar Navigation -->
+    <ul class="side-nav">
+      <li class="nav-item home">
+        <a href="index.html"><b>Home</b></a>
+      </li>
+      <li class="nav-item sorting">
+        <a href="src/Sorting/sorting.html"><b>Sorting Visualizer</b></a>
+      </li>
+      <li class="nav-item searching">
+        <a href="src/Searching/searching.html"><b>Searching Visualizer</b></a>
+      </li>
+      <li class="nav-item project-info">
+        <a href="src/About/about.html"><b>Project Info</b></a>
+      </li>
+    </ul>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      let themeToggle = document.querySelector(".theme-toggle");
+      let menuToggle = document.querySelector(".menu-toggle");
+      let body = document.querySelector("body");
+      let sideNav = document.querySelector(".side-nav");
+
+      themeToggle.onclick = function () {
+        body.classList.toggle("dark-mode");
+        themeToggle.classList.toggle("active");
+      };
+
+      menuToggle.onclick = function () {
+        menuToggle.classList.toggle("active");
+        sideNav.classList.toggle("active");
+      };
+    </script>
+  </body>
+</html>

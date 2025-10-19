@@ -19,5 +19,3 @@
 Name: MD. AL- MOTTAKI
 
 Roll: 1503028
-
-Batch: CSE 2021(Readd)
